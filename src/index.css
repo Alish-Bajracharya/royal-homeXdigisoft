@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Playfair Display','Work Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 
+body {
+  font-family: 'Playfair Display', serif;
+  scroll-behavior: smooth;
 }
