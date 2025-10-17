@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import image from "../../assets/homes.webp";
 import icon1 from "../../assets/icons/hotel-cart.png";
 import icon2 from "../../assets/icons/time.png";
-import icon3 from "../../assets/icons/ev.png";
+import icon3 from "../../assets/icons/EV.png";
 
 // Reusable animation variants
 const fadeIn = (direction = "up", delay = 0) => ({
