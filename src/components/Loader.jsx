@@ -1,78 +1,112 @@
 import React from "react";
-import Logo from "../assets/logo.jpeg";
-<Logo logo={Logo} size={140} arcColor="#06b6d4" trackColor="#e6eef2" />
+import Logo from "../assets/logo.png";
 
 export default function Loader({
-  logo,
-  size = 120,
-  arcColor = "#06b6d4",
-  trackColor = "#e6eef2",
-  thickness = 6,
+  logo = Logo,
+  size = 140,
+  arcColor = "#caa577", // elegant gold tone
+  trackColor = "#f3f4f6",
+  thickness = 5,
 }) {
   const svgSize = size;
   const center = svgSize / 2;
-  const radius = center - thickness; 
+  const radius1 = center - thickness; // outer circle
+  const radius2 = center - thickness * 3; // inner circle
 
   return (
-    <div className="flex items-center justify-center h-full w-full">
+    <div className="flex items-center justify-center h-screen w-full bg-white">
       <div style={{ width: size, height: size }} className="relative">
-        {/* Rotating arc (SVG) */}
+        {/* Rotating SVG */}
         <svg
           width={svgSize}
           height={svgSize}
           viewBox={`0 0 ${svgSize} ${svgSize}`}
           className="absolute inset-0"
           style={{
-            // use Tailwind's animate-spin but override duration for a nicer speed
-            animation: "spin 1.6s linear infinite",
+            animation: "spin 1.8s linear infinite",
           }}
         >
-          {/* Full faint track */}
+          {/* Outer track */}
           <circle
             cx={center}
             cy={center}
-            r={radius}
+            r={radius1}
             stroke={trackColor}
             strokeWidth={thickness}
             fill="none"
           />
-
-          {/* Arc (partial stroke) */}
+          {/* Outer arc */}
           <circle
             cx={center}
             cy={center}
-            r={radius}
+            r={radius1}
             stroke={arcColor}
             strokeWidth={thickness}
             strokeLinecap="round"
             fill="none"
-            // create an arc by using dasharray (dash + gap)
-            strokeDasharray={`${Math.round(Math.PI * radius * 0.25)} ${Math.round(
-              Math.PI * radius * 2
+            strokeDasharray={`${Math.round(Math.PI * radius1 * 0.35)} ${Math.round(
+              Math.PI * radius1 * 2
             )}`}
             transform={`rotate(-90 ${center} ${center})`}
+          />
+
+          {/* Inner track */}
+          <circle
+            cx={center}
+            cy={center}
+            r={radius2}
+            stroke={trackColor}
+            strokeWidth={thickness - 1}
+            fill="none"
+          />
+          {/* Inner arc (reverse rotation) */}
+          <circle
+            cx={center}
+            cy={center}
+            r={radius2}
+            stroke={arcColor}
+            strokeWidth={thickness - 1}
+            strokeLinecap="round"
+            fill="none"
+            strokeDasharray={`${Math.round(Math.PI * radius2 * 0.3)} ${Math.round(
+              Math.PI * radius2 * 2
+            )}`}
+            transform={`rotate(90 ${center} ${center})`}
+            style={{
+              animation: "spin-reverse 2s linear infinite",
+              transformOrigin: "center",
+            }}
           />
         </svg>
 
         {/* Logo in the center */}
-        <div
-          className="absolute inset-0 flex items-center justify-center bg-transparent"
-          aria-hidden
-        >
+        <div className="absolute inset-0 flex items-center justify-center">
           <img
-            src={Logo}
+            src={logo}
             alt="logo"
-            style={{ width: size * 0.55, height: size * 0.55, objectFit: "contain" }}
+            style={{
+              width: size * 0.55,
+              height: size * 0.55,
+              objectFit: "contain",
+            }}
             className="block"
           />
         </div>
       </div>
 
-      {/* Extra: define keyframes locally so users don't need to modify Tailwind config */}
+      {/* Keyframes */}
       <style>
-        {`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}
+        {`
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          @keyframes spin-reverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+          }
+        `}
       </style>
     </div>
   );
 }
-   

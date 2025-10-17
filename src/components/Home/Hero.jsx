@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Herobg from "../../assets/hero.webp"
+import ButtonPrimary from "../ButtonPrimary";
 
 const Hero = () => {
   return (
@@ -14,47 +15,46 @@ const Hero = () => {
       {/* Zoom-in animated background overlay */}
       <motion.div
         initial={{ scale: 1 }}
-        animate={{ scale: 1.1 }}
-        transition={{ duration: 10, ease: "easeOut" }}
+        animate={{ scale: 1.3 }}
+        transition={{ duration: 13, ease: "easeOut" }}
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/hero-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundImage: `url(${Herobg})`,
         }}
       />
 
       {/* Semi-transparent dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Center Content */}
       <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative z-10 text-center max-w-5xl px-4"
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
+        transition={{ duration: 1.2}}
+        className="relative z-10 text-center max-w-[400px] px-4"
       >
         {/* Glass effect background */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, ease: "easeOut", delay: 0.4 }}
-          className="backdrop-blur-md bg-white/20 rounded-sm border border-white/20 px-4 py-10 mx-72"
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.9 }}
+          className="backdrop-blur-md bg-white/10 border border-white/20 px-6 sm:px-8 py-8 sm:py-12 mx-auto max-w-4xl"
         >
           <motion.h3
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-            className="text-6xl italic text-[#b38b59] py-3 font-[WindSong, cursive]"
+            transition={{ duration: 1.3, ease: "easeOut", delay: 1.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl py-2 italic text-white mb-4"
+            style={{ fontFamily: "WindSong", transform: 'capitalize' }}
           >
             Luxury
           </motion.h3>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
-            className="text-[170px] leading-relaxed text-white font-serif font-medium tracking-[8px]  -ml-80"
+            transition={{ duration: 1.5, ease: "easeOut", delay: 1.4 }}
+            className="text-6xl sm:text-8xl md:text-[160px] -ml-6 sm:-ml-28 md:-ml-80 lg:-ml-80 leading-tight text-white font-serif font-extralight py-2 tracking-[4px]"
           >
             MOUNTAIN
           </motion.h1>
@@ -63,20 +63,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-            className="text-white/90 text-xl w-[600px] font-medium tracking-wider mb-10 font-[sans-serif] -ml-28"
-          >
+            className="text-white/90 text-base sm:text-lg md:text-xl w-[380px] sm:w-[500px] md:w-[600px] lg:w-[600px] font-medium tracking-wider py-8 font-[sans-serif]  -ml-8 sm:-ml-24 md:-ml-36 lg:-ml-36"
+          > 
             Our hotel offers a wide range of facilities designed to ensure a
             comfortable and enjoyable stay
           </motion.p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="bg-[#caa577] hover:bg-black text-white font-[sans-serif] font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-md relative"
-          >
-            VIEW HOTEL DETAILS
-            <span className="absolute inset-0 border border-[#caa577] translate-x-2 translate-y-2 opacity-60"></span>
-          </motion.button>
+          <ButtonPrimary label="VIEW HOTEL DETAILS" href="/RoyalHomes" />
         </motion.div>
       </motion.div>
     </section>
@@ -84,3 +76,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
