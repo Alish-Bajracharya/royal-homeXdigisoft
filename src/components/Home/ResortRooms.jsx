@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Img1 from "../../assets/hills.webp";
 import Img2 from "../../assets/homes.webp";
-import Img3 from "../../assets/Swimming.webp";
+import Img3 from "../../assets/swimming.webp";
 import Img4 from "../../assets/happy.webp";
 
 const rooms = [
