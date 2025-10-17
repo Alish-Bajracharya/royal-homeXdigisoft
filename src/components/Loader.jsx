@@ -4,14 +4,14 @@ import Logo from "../assets/logo.png";
 export default function Loader({
   logo = Logo,
   size = 140,
-  arcColor = "#caa577", // elegant gold tone
+  arcColor = "#caa577", 
   trackColor = "#f3f4f6",
   thickness = 5,
 }) {
   const svgSize = size;
   const center = svgSize / 2;
-  const radius1 = center - thickness; // outer circle
-  const radius2 = center - thickness * 3; // inner circle
+  const radius1 = center - thickness; 
+  const radius2 = center - thickness * 3; 
 
   return (
     <div className="flex items-center justify-center h-screen w-full bg-white">
