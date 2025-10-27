@@ -34,7 +34,7 @@ const Service = () => {
   return (
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-8">
-        {/* ===== Header ===== */}
+        {/*  Header  */}
         <motion.div
           variants={fadeIn("up", 0.2)}
           initial="hidden"
@@ -64,9 +64,9 @@ const Service = () => {
           </div>
         </motion.div>
 
-        {/* ===== Content Section ===== */}
+        {/*  Content Section  */}
         <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8">
-          {/* ===== Left Section ===== */}
+          {/*  Left Section  */}
           <div className="flex flex-col">
             {/* Top Image */}
             <motion.div
@@ -114,7 +114,7 @@ const Service = () => {
             </motion.div>
           </div>
 
-          {/* ===== Right Section ===== */}
+          {/*  Right Section  */}
           <motion.div
             variants={fadeIn("right", 0.5)}
             initial="hidden"

@@ -5,10 +5,10 @@ import RoomImg from "../../assets/sk.png";
 const Contact = () => {
   return (
     <section className="relative w-full min-h-[700px] lg:h-[800px] overflow-hidden">
-      {/* ===== Container ===== */}
+      {/*  Container  */}
       <div className="flex flex-col lg:flex-row w-full h-full relative">
 
-        {/* ===== Left Map Section ===== */}
+        {/*  Left Map Section  */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -26,7 +26,7 @@ const Contact = () => {
           ></iframe>
         </motion.div>
 
-        {/* ===== Right Image Section ===== */}
+        {/*  Right Image Section  */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -39,7 +39,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent"></div>
         </motion.div>
 
-        {/* ===== Floating Contact Card ===== */}
+        {/*  Floating Contact Card  */}
         <motion.div
           initial={{ opacity: 0, y: 80, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -59,7 +59,7 @@ const Contact = () => {
             Royals Home Resort Pvt. Ltd.
           </p>
 
-          {/* ===== Contact Details ===== */}
+          {/*  Contact Details  */}
           <div className="space-y-6 text-[#333]">
             {/* Phone */}
             <motion.div

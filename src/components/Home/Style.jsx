@@ -49,7 +49,7 @@ const Style = () => {
   return (
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-16">
-        {/* ===== Left Side - Image Stack ===== */}
+        {/*  Left Side - Image Stack  */}
         <motion.div
           variants={subtleRise}
           initial="hidden"
@@ -76,7 +76,7 @@ const Style = () => {
           </div>
         </motion.div>
 
-        {/* ===== Right Side - Text Content ===== */}
+        {/*  Right Side - Text Content  */}
         <motion.div
           variants={container}
           initial="hidden"

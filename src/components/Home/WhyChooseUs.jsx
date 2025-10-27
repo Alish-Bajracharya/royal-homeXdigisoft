@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
   return (
     <section className="bg-[#f7f7f6] py-24 overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-8">
-        {/* ===== Header ===== */}
+        {/*  Header  */}
         <motion.div
           variants={fadeIn("down", 0.1)}
           initial="hidden"
@@ -67,18 +67,18 @@ const WhyChooseUs = () => {
           <p className="text-[#caa577] uppercase text-sm tracking-[0.12em] font-semibold font-[sans-serif] mb-8">
             Why Choose Us
           </p>
-          <h2 className="text-2xl md:text-5xl font-serif text-[#111] leading-snug py-4">
+          <h2 className="text-2xl md:text-5xl font-serif text-[#111] leading-relaxed py-4">
             EXPERIENCE A WORLD OF <br className="hidden md:block" />
             <span className="block mt-8">REFINED RELAXATION</span>
           </h2>
         </motion.div>
 
-        {/* ===== Grid Section ===== */}
+        {/*  Grid Section  */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-          {/* ===== Left Column ===== */}
+          {/*  Left Column  */}
           <motion.div
             variants={fadeIn("left", 0.2)}
-            initial="hidden"
+            initial="hidden"s
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col gap-10"
@@ -106,7 +106,7 @@ const WhyChooseUs = () => {
             </div>
           </motion.div>
 
-          {/* ===== Center Image ===== */}
+          {/*  Center Image  */}
           <motion.div
             variants={fadeIn("up", 0.3)}
             initial="hidden"
@@ -121,7 +121,7 @@ const WhyChooseUs = () => {
             />
           </motion.div>
 
-          {/* ===== Right Column ===== */}
+          {/*  Right Column  */}
           <motion.div
             variants={fadeIn("right", 0.4)}
             initial="hidden"
