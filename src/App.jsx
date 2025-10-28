@@ -3,13 +3,9 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Loader from "./components/Loader";
-// import DeluxeRooms from "./pages/DeluxeRooms";
-// import About from "./pages/About";
-// import Restaurant from "./pages/Restaurant"
 import ScrollToTop from "./components/ScrollToTop";
-// import Contact from "./pages/Contact";
-// import Experience from "./pages/Experience";
-// import GalleryP from "./pages/Gallery.jsx";
+import RoomDetails from "./pages/RoomDetails";
+import RoyalHomes from "./pages/RoyalHomes";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,11 +28,9 @@ function App() {
       {!loading && (
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/DeluxeRooms" element={<DeluxeRooms />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Restaurant-Bars" element={<Restaurant />} />
-          <Route path="/Experience" element={<Experience />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/RoomDetails" element={<RoomDetails />} />
+          <Route path="/RoyalHomes" element={<RoyalHomes />} />
+          {/* <Route path="/Contact" element={<Contact />} />
           <Route path="/Gallery" element={<GalleryP />} /> */}
 
         </Routes>
