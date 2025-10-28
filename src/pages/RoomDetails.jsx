@@ -273,107 +273,124 @@ export default function RoomDetails() {
 
           {/* Right Column */}
           <motion.aside
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="space-y-6"
-          >
-            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <h3 className="text-2xl font-serif font-semibold mb-4">Book Your Room</h3>
-              <form onSubmit={validateAndSubmit} className="space-y-4">
-                {["checkIn", "checkOut"].map((field) => (
-                  <div key={field}>
-                    <label className="block text-sm text-gray-600 mb-1">
-                      {field === "checkIn" ? "Check-In" : "Check-Out"}
-                    </label>
-                    <input
-                      type="date"
-                      name={field}
-                      value={form[field]}
-                      onChange={handleChange}
-                      className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                    />
-                  </div>
-                ))}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="space-y-10"
+        >
+          {/* Booking Card */}
+          <div className="bg-gradient-to-br from-white via-[#fffaf5] to-[#fef6ee] border border-amber-100 p-6 shadow-[0_4px_15px_rgba(0,0,0,0.06)]">
+            <h3 className="text-2xl font-serif font-semibold mb-4 text-amber-800 border-b pb-2 border-amber-200">
+              Book Your Room
+            </h3>
+
+            <form onSubmit={validateAndSubmit} className="space-y-5">
+              {["checkIn", "checkOut"].map((field) => (
+                <div key={field}>
+                  <label className="block text-sm text-gray-700 mb-1 font-medium">
+                    {field === "checkIn" ? "Check-In Date" : "Check-Out Date"}
+                  </label>
+                  <input
+                    type="date"
+                    name={field}
+                    value={form[field]}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all hover:border-amber-300"
+                  />
+                </div>
+              ))}
+
+              {[ 
+                { name: "rooms", label: "Rooms", options: ["1", "2", "3"] },
+                { name: "adults", label: "Adults", options: ["1", "2", "3", "4"] },
+                { name: "children", label: "Children", options: ["0", "1", "2", "3"] },
+              ].map((item) => (
+                <div key={item.name}>
+                  <label className="block text-sm text-gray-700 mb-1 font-medium">
+                    {item.label}
+                  </label>
+                  <select
+                    name={item.name}
+                    value={form[item.name]}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 hover:border-amber-300 transition-all"
+                  >
+                    {item.options.map((o) => (
+                      <option key={o} value={o}>
+                        {o} {item.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+
+              <div className="pt-3 border-t border-amber-100">
+                <h4 className="text-sm font-semibold text-amber-800 mb-3 flex items-center gap-2">
+                  <Check size={16} className="text-amber-600" /> Extra Services
+                </h4>
 
                 {[
-                  { name: "rooms", label: "Rooms", options: ["1", "2", "3"] },
-                  { name: "adults", label: "Adults", options: ["1", "2", "3"] },
-                  { name: "children", label: "Children", options: ["0", "1", "2"] },
+                  { key: "clean", label: "Room Clean", price: "Rs. 1500 /Night" },
+                  { key: "parking", label: "Parking", price: "Free" },
+                  { key: "breakfast", label: "Breakfast", price: "Rs. 250 /Total" },
+                  { key: "dinner", label: "Dinner", price: "Rs. 500 /Day" },
                 ].map((item) => (
-                  <div key={item.name}>
-                    <label className="block text-sm text-gray-600 mb-1">
-                      {item.label}
+                  <div
+                    key={item.key}
+                    className="flex items-center justify-between py-1.5 text-sm text-gray-700"
+                  >
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name={`extra_${item.key}`}
+                        checked={form.extras[item.key]}
+                        onChange={handleChange}
+                        className="accent-amber-500"
+                      />
+                      <span>{item.label}</span>
                     </label>
-                    <select
-                      name={item.name}
-                      value={form[item.name]}
-                      onChange={handleChange}
-                      className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                    >
-                      {item.options.map((o) => (
-                        <option key={o} value={o}>
-                          {o} {item.label}
-                        </option>
-                      ))}
-                    </select>
+                    <span className="text-amber-700 font-medium">{item.price}</span>
                   </div>
                 ))}
+              </div>
 
-                <div className="pt-3 border-t">
-                  <h4 className="text-sm font-medium text-gray-800 mb-2">
-                    Extra Services
-                  </h4>
-                  {[
-                    { key: "clean", label: "Room Clean", price: "Rs. 1500 /Night" },
-                    { key: "parking", label: "Parking", price: "Free" },
-                    { key: "breakfast", label: "Breakfast", price: "Rs. 250 /Total" },
-                    { key: "dinner", label: "Dinner", price: "Rs. 500 /Day" },
-                  ].map((item) => (
-                    <div
-                      key={item.key}
-                      className="flex items-center justify-between mt-2 text-sm"
-                    >
-                      <label className="flex items-center gap-2">
-                        <input
-                          type="checkbox"
-                          name={`extra_${item.key}`}
-                          checked={form.extras[item.key]}
-                          onChange={handleChange}
-                        />
-                        <span>{item.label}</span>
-                      </label>
-                      <span>{item.price}</span>
-                    </div>
-                  ))}
-                </div>
+              <button
+                type="submit"
+                className="w-full bg-amber-600 text-white rounded-full py-3.5 mt-6 font-medium tracking-wide hover:bg-amber-700 shadow-lg shadow-amber-200/60 transition-all duration-300"
+              >
+                BOOK NOW →
+              </button>
+            </form>
+          </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-amber-500 text-white rounded-full py-3 mt-4 hover:bg-amber-800 transition font-medium"
-                >
-                  BOOK NOW →
-                </button>
-              </form>
-            </div>
+          {/* Reservation Support */}
+          <div className="bg-gradient-to-tr from-[#fffaf5] to-[#fdf1e7] border border-amber-100 p-4  shadow-[0_4px_15px_rgba(0,0,0,0.05)]">
+            <h4 className="font-serif text-xl font-semibold mb-4 text-amber-800 border-b border-amber-200 pb-2">
+              Reservation Support
+            </h4>
 
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm ">
-              <h4 className="font-serif text-xl font-semibold mb-3">Reservation Support</h4>
-              <div className="text-gray-700 text-sm space-y-3 ">
-                <div className="flex items-center gap-3">
-                  <Phone size={16} /> <span className="ml-2">+977-9806767979</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail size={16} /> <span className="ml-2">info@royalshomeresort.com.np</span>
-                </div> 
-                <div className="flex items-center gap-3">
-                  <Map size={16} />{" "}
-                  <span className="ml-2">Royal Homes, Anboo Khaireni, Tanahun</span>
-                </div>
+            <div className="text-gray-700 text-sm space-y-4">
+              <div className="flex items-center gap-3 hover:text-amber-700 transition-all">
+                <Phone size={18} className="text-amber-600" /> 
+                <span className="font-medium">+977-9806767979</span>
+              </div>
+              <div className="flex items-center gap-3 hover:text-amber-700 transition-all">
+                <Mail size={18} className="text-amber-600" /> 
+                <span className="font-medium">info@royalshomeresort.com.np</span>
+              </div>
+              <div className="flex items-center gap-3 hover:text-amber-700 transition-all">
+                <Map size={18} className="text-amber-600" /> 
+                <span className="font-medium">Royal Homes, Anboo Khaireni, Tanahun</span>
               </div>
             </div>
+
+            <div className="mt-2 border-t border-amber-100 pt-4 text-xs text-gray-500">
+              <p>Need urgent help? Our support team is available 24/7.</p>
+            </div>
+          </div>
           </motion.aside>
+
         </section>
       </main>
 
