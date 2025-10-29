@@ -22,8 +22,6 @@ import icon12 from "../assets/rooms/icon-12.png";
 import icon13 from "../assets/rooms/icon-13.png";
 import icon14 from "../assets/rooms/icon-14.png";
 import icon15 from "../assets/rooms/icon-15.png";
-import icon16 from "../assets/rooms/icon-16.png";
-import icon17 from "../assets/rooms/icon-17.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -33,12 +31,10 @@ const room = {
   rating: 4.8,
   location: "Tanahun",
   icons: [
-    { icon: icon12, label: "3 Guests" },
-    { icon: icon13, label: "2 Children" },
+    { icon: icon12, label: "2 Guests" },
+    { icon: icon13, label: "1 Children" },
     { icon: icon14, label: "40 m²" },
     { icon: icon15, label: "2 Beds" },
-    { icon: icon16, label: "2 Baths" },
-    { icon: icon17, label: "Rs.2500/night" },
   ],
   heroImage: hero,
   description: `The European boutique design of our Deluxe Rooms with Matterhorn view includes either two single beds or a Queen Size double bed. There is accommodation for one additional bed in the spacious living room with couch. Enjoy the breathtaking views of the Tanahun, fresh mountain air, and the gentle afternoon light while lounging on the south-facing balcony.
@@ -100,7 +96,7 @@ export default function RoomDetails() {
       alert("Check-out must be after check-in.");
       return;
     }
-    alert(`Successfully booked ${room.title} from ${form.checkIn} to ${form.checkOut}.`);
+    alert(`Available ${room.title} from ${form.checkIn} to ${form.checkOut}.`);
   };
 
   const fadeUp = {
@@ -137,27 +133,7 @@ export default function RoomDetails() {
           className="flex flex-col md:flex-row md:items-start md:justify-between gap-6"
         >
           <div className="flex-1">
-            <h2 className="text-3xl font-serif font-semibold text-gray-900">{room.title}</h2>
-            <div className="flex items-center gap-3 mt-2 text-sm text-gray-600">
-              <span>({room.reviews} Reviews)</span>
-              <div className="flex items-center text-amber-400">
-                {Array(5)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className={i < Math.round(room.rating) ? "" : "opacity-40"}
-                    />
-                  ))}
-              </div>
-              <div className="flex items-center gap-1 text-gray-500">
-                <MapPin size={14} />
-                <span>{room.location}</span>
-              </div>
-            </div>
-
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-y-6 gap-x-16 text-center text-gray-700 justify-items-center">
+            <div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-6 gap-x-6 text-center text-gray-700 justify-items-center">
               {room.icons.map((it, idx) => (
                 <motion.div
                   key={idx}
@@ -165,9 +141,9 @@ export default function RoomDetails() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  className="flex flex-col items-center justify-center gap-3 bg-white shadow-sm rounded-lg p-4 px-6 hover:shadow-md transition"
+                  className="flex flex-col items-center justify-center gap-3 bg-white shadow-sm rounded-lg p-2 px-5 hover:shadow-md transition"
                 >
-                  <img src={it.icon} alt={it.label} className="w-20 h-14 object-contain" />
+                  <img src={it.icon} alt={it.label} className="w-10 h-7 object-contain" />
                   <span className="text-sm font-medium">{it.label}</span>
                 </motion.div>
               ))}
@@ -193,7 +169,7 @@ export default function RoomDetails() {
           <img
             src={room.heroImage}
             alt="Room"
-            className="w-full h-[350px] md:h-[450px] object-cover"
+            className="w-full h-[450px] md:h-[650px] object-cover"
           />
         </motion.div>
 
@@ -281,8 +257,8 @@ export default function RoomDetails() {
         >
           {/* Booking Card */}
           <div className="bg-gradient-to-br from-white via-[#fffaf5] to-[#fef6ee] border border-amber-100 p-6 shadow-[0_4px_15px_rgba(0,0,0,0.06)]">
-            <h3 className="text-2xl font-serif font-semibold mb-4 text-amber-800 border-b pb-2 border-amber-200">
-              Book Your Room
+            <h3 className="text-2xl text-center font-serif font-semibold mb-4 text-amber-800 border-b pb-2 border-amber-200">
+              Check Your Room
             </h3>
 
             <form onSubmit={validateAndSubmit} className="space-y-5">
@@ -359,33 +335,33 @@ export default function RoomDetails() {
                 type="submit"
                 className="w-full bg-amber-600 text-white rounded-full py-3.5 mt-6 font-medium tracking-wide hover:bg-amber-700 shadow-lg shadow-amber-200/60 transition-all duration-300"
               >
-                BOOK NOW →
+                Check Availability →
               </button>
             </form>
           </div>
 
           {/* Reservation Support */}
-          <div className="bg-gradient-to-tr from-[#fffaf5] to-[#fdf1e7] border border-amber-100 p-4  shadow-[0_4px_15px_rgba(0,0,0,0.05)]">
-            <h4 className="font-serif text-xl font-semibold mb-4 text-amber-800 border-b border-amber-200 pb-2">
-              Reservation Support
+          <div className="px-10 py-5 bg-gradient-to-br from-white via-[#fffaf5] to-[#fef6ee] border border-amber-100 p-6 shadow-[0_4px_15px_rgba(0,0,0,0.06)]">
+            <h4 className="font-serif text-xl font-semibold text-center mb-4 text-amber-800 border-b border-amber-200 pb-2">
+              For Reservation
             </h4>
 
-            <div className="text-gray-700 text-sm space-y-4">
+            <div className="text-gray-700 text-sm mb-4 space-y-4">
               <div className="flex items-center gap-3 hover:text-amber-700 transition-all">
                 <Phone size={18} className="text-amber-600" /> 
-                <span className="font-medium">+977-9806767979</span>
+                <span className="font-medium text-base">+977-9806767979</span>
               </div>
               <div className="flex items-center gap-3 hover:text-amber-700 transition-all">
                 <Mail size={18} className="text-amber-600" /> 
-                <span className="font-medium">info@royalshomeresort.com.np</span>
+                <span className="font-medium text-base">info@royalshomeresort.com.np</span>
               </div>
               <div className="flex items-center gap-3 hover:text-amber-700 transition-all">
                 <Map size={18} className="text-amber-600" /> 
-                <span className="font-medium">Royal Homes, Anboo Khaireni, Tanahun</span>
+                <span className="font-medium text-base ">Royal Homes, Anboo Khaireni, Tanahun</span>
               </div>
             </div>
-
-            <div className="mt-2 border-t border-amber-100 pt-4 text-xs text-gray-500">
+            
+            <div className="border-t border-amber-100 pt-4 text-xs text-gray-500">
               <p>Need urgent help? Our support team is available 24/7.</p>
             </div>
           </div>

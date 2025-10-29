@@ -85,7 +85,7 @@ const Navbar = () => {
                     transition={{ duration: 0.2 }}
                     onMouseEnter={() => setShowDropdown(true)}
                     onMouseLeave={() => setShowDropdown(false)}
-                    className="absolute left-0 mt-2 bg-white shadow-xl rounded-lg py-2 w-48"
+                    className="absolute left-0 mt-2 bg-white shadow-xl rounded-sm py-2 w-48"
                   >
                     {link.dropdown.map((room, idx) => (
                       <li key={idx}>
