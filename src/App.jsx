@@ -6,6 +6,7 @@ import Loader from "./components/Loader";
 import ScrollToTop from "./components/ScrollToTop";
 import RoomDetails from "./pages/RoomDetails";
 import RoyalHomes from "./pages/RoyalHomes";
+import Service from "./pages/Service";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/RoomDetails" element={<RoomDetails />} />
           <Route path="/RoyalHomes" element={<RoyalHomes />} />
+          <Route path="/Services" element={<Service />} />
+
           {/* <Route path="/Contact" element={<Contact />} />
           <Route path="/Gallery" element={<GalleryP />} /> */}
 

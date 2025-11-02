@@ -27,8 +27,8 @@ const Navbar = () => {
         { name: "Twin Room", href: "/rooms/twin" },
       ],
     },
-    { name: "ROYAL HOMES", href: "/#/RoyalHomes" },
-    { name: "SERVICES", href: "/services" },
+    { name: "ROYALS HOME", href: "/#/RoyalHomes" },
+    { name: "SERVICES", href: "/#/Services" },
     { name: "EVENTS", href: "/events" },
     { name: "NEWS", href: "/news" },
     { name: "CONTACT", href: "/contact" },
@@ -45,9 +45,9 @@ const Navbar = () => {
       <div className="max-w-[1850px] mx-auto flex items-center justify-between px-8 py-4 lg:py-5 transition-all duration-500">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
-          <img src={Logo} alt="Royal Homes Logo" className="w-16 h-16 object-contain" />
+          <img src={Logo} alt="ROYALS HOME Logo" className="w-16 h-16 object-contain" />
           <span className="font-serif text-2xl font-medium tracking-wide">
-            Royal Homes
+            ROYALS HOME
           </span>
         </a>
 

@@ -15,7 +15,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import hero from "../assets/hero.webp";
 import gallery1 from "../assets/night1.webp";
 import gallery2 from "../assets/hero.webp";
 import icon12 from "../assets/rooms/icon-12.png";
@@ -24,6 +23,7 @@ import icon14 from "../assets/rooms/icon-14.png";
 import icon15 from "../assets/rooms/icon-15.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import hero from "../assets/hero.webp";
 
 const room = {
   title: "Deluxe Room",
@@ -463,7 +463,7 @@ export default function RoomDetails() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Map size={18} className="text-[#1B4332]" />
-                    <span className="font-medium">Royal Homes, Anboo Khaireni, Tanahun</span>
+                    <span className="font-medium">ROYALS HOME, Anboo Khaireni, Tanahun</span>
                   </div>
                 </div>
 

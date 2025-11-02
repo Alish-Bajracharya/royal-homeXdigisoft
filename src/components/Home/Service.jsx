@@ -50,7 +50,7 @@ const Service = () => {
             <h2 className="text-2xl md:text-5xl font-serif py-4 font-light tracking-wide text-[#111] leading-[1.6]">
               YOUR JOURNEY BEGINS
               <br />
-              <span className="block mt-4 md:mt-7">AT ROYAL HOMES</span>
+              <span className="block mt-4 md:mt-7">AT ROYALS HOME</span>
             </h2>
           </div>
 
@@ -59,7 +59,7 @@ const Service = () => {
             <p className="text-[#444] mt-0 lg:mt-4 lg:w-[400px] text-[15px] leading-relaxed font-sans text-justify">
               Step into a world of refined hospitality where every journey begins
               with comfort, elegance, and unforgettable moments. Experience
-              serenity, indulgence, and signature service at Royal Homes Resorts.
+              serenity, indulgence, and signature service at ROYALS HOME Resorts.
             </p>
           </div>
         </motion.div>
@@ -169,7 +169,7 @@ const Service = () => {
                   STAY INSPIRED, STAY ROYAL
                 </h3>
                 <p className="text-base max-w-xs font-sans leading-relaxed mb-6 opacity-90">
-                  Every stay at Royal Homes is an experience crafted with elegance
+                  Every stay at ROYALS HOME is an experience crafted with elegance
                   and care, where comfort meets sophistication.
                 </p>
                 <div className="flex gap-10 text-5xl font-medium font-[sans-serif]">

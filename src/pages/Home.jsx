@@ -5,7 +5,7 @@ import Service from "../components/Home/Service";
 import Style from "../components/Home/Style";
 import WhyChooseUs from "../components/Home/WhyChooseUs";
 import Footer from "../components/Footer";
-import Contact from "../components/Home/Contact";
+import Contact from "../components/Contact";
 import Testimonial from "../components/Home/Testimonial";
 // import Availability from "../components/Home/Availability";
 import Navbar from "../components/Navbar";

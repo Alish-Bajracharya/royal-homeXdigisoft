@@ -37,10 +37,10 @@ const Footer = () => {
       >
         {/* ===== Top: Logo & Description ===== */}
         <div className="flex flex-col items-center text-center space-y-6 mb-14">
-          <img src={LogoImg} alt="Royal Homes Resort" className="w-40 object-contain" />
+          <img src={LogoImg} alt="ROYALS HOME Resort" className="w-40 object-contain" />
           <p className="max-w-2xl text-gray-300 text-sm leading-relaxed">
             Experience timeless elegance and warm Nepali hospitality at{" "}
-            <span className="text-[#bda87f] font-semibold">Royal Homes Resort</span>. 
+            <span className="text-[#bda87f] font-semibold">ROYALS HOME Resort</span>. 
             A serene retreat blending nature, luxury, and heartfelt service in the heart of Aanboo Khaireni.
           </p>
           <div className="flex space-x-5 mt-2">
@@ -120,7 +120,7 @@ const Footer = () => {
       {/* ===== Bottom Bar ===== */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs">
         <div className="text-center md:text-left">
-          © {new Date().getFullYear()} <span className="text-[#bda87f]">Royal Homes Resort</span>. All rights reserved.
+          © {new Date().getFullYear()} <span className="text-[#bda87f]">ROYALS HOME Resort</span>. All rights reserved.
         </div>
         <div className="mt-2 md:mt-0 text-center md:text-right">
           Website by{" "}

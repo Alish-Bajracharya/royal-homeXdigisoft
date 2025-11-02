@@ -61,7 +61,7 @@ export default function AboutUs() {
               Step into a world of refined hospitality where every journey begins
               with comfort, elegance, and unforgettable moments.
               <br className="hidden sm:block" />
-              At Royal Homes Resort.
+              At ROYALS HOME Resort.
             </p>
 
             <motion.button

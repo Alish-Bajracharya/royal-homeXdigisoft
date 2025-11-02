@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import RoomImg from "../../assets/sk.png";
+import RoomImg from "../assets/night.webp";
 
 const Contact = () => {
   return (

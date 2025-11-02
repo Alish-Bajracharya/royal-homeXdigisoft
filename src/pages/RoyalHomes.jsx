@@ -1,14 +1,12 @@
 import React from "react";
 import AboutUs from "../components/Home/AboutUs";
-import Service from "../components/Home/Service";
-import Style from "../components/Home/Style";
 import WhyChooseUs from "../components/Home/WhyChooseUs";
 import Footer from "../components/Footer";
-import Contact from "../components/Home/Contact";
+import Contact from "../components/Contact";
 import Testimonial from "../components/Home/Testimonial";
-// import Availability from "../components/Home/Availability";
 import Navbar from "../components/Navbar";
 import hero from "../assets/hero.webp";
+import FeaturesSection from "../components/About/FeaturesSection";
 
 const RoyalHomes = () => {
   return (
@@ -25,7 +23,7 @@ const RoyalHomes = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative text-center text-white">
           <h1 className="text-5xl md:text-6xl font-serif font-semibold tracking-wide">
-            Royal Homes
+            ROYALS HOME
           </h1>
           <p className="text-lg mt-3">
             ~ RHR is committed to creating a welcoming and memorable experience for every guest. 
@@ -35,12 +33,11 @@ const RoyalHomes = () => {
 
       {/* Page Sections */}
       <AboutUs />
-      <Style />
+      <FeaturesSection />
       <WhyChooseUs />
-      <Testimonial />
       <Contact />
+      <Testimonial />
       <Footer />
-      {/* <Availability /> */}
     </>
   );
 };

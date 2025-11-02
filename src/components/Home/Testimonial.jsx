@@ -49,7 +49,7 @@ const Testimonial = () => {
             <p className="mt-0 lg:mt-0 lg:w-[400px] leading-relaxed text-sm font-lexend font-medium text-[#616161] text-justify">
               Step into a world of refined hospitality where every journey begins
               with comfort, elegance, and unforgettable moments. Experience
-              serenity, indulgence, and signature service at Royal Homes
+              serenity, indulgence, and signature service at ROYALS HOME
               Resorts.
             </p>
           </div>
@@ -100,7 +100,7 @@ const Testimonial = () => {
             },
             {
               stars: 5,
-              text: `What impressed me most about Royal Homes was the attention to detail. The staff remembered our names, our preferences, and even surprised us with a special cake for our anniversary.`,
+              text: `What impressed me most about ROYALS HOME was the attention to detail. The staff remembered our names, our preferences, and even surprised us with a special cake for our anniversary.`,
               name: "ALISH & NIMCHUKI",
               location: "KATHMANDU",
               user: User2,

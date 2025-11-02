@@ -121,7 +121,7 @@ const Style = () => {
             variants={slideInLeft}
             className="text-[#555] leading-relaxed text-justify font-sans py-4 text-sm md:text-base"
           >
-            At Royal Homes Resorts, we believe every detail matters. From warm
+            At ROYALS HOME Resorts, we believe every detail matters. From warm
             welcomes to world-class amenities, we craft moments that transform
             ordinary stays into extraordinary experiences of comfort and charm.
           </motion.p>
