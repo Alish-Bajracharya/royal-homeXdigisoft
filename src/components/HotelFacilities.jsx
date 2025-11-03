@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import airCondition from "../assets/icons/aircondition.png";
 import internet from "../assets/icons/router.png";
@@ -23,7 +23,7 @@ const facilities = [
     category: "SWIMMING",
     title: "Indoor Swimming Pool",
     description:
-      "Immerse yourself in tranquility with our temperature-controlled indoor swimming pool designed for leisure and fitness, offering calm lighting and serene vibes.",
+      "Immerse yourself in tranquility with our temperature-controlled indoor swimming pool designed for leisure and fitness, offering calm lighting and serene vibes. Enjoy refreshing laps or simply unwind by the poolside with soothing music and refreshments from our in-house bar. The pool area also includes a jacuzzi and a small kids’ section for family enjoyment.",
     image: dummy,
     reverse: false,
   },
@@ -32,7 +32,7 @@ const facilities = [
     category: "BUSINESS",
     title: "Conference Hall",
     description:
-      "Host your meetings, workshops, and conferences in a sophisticated venue equipped with the latest technology and refined interiors for a seamless experience.",
+      "Host your meetings, workshops, and conferences in a sophisticated venue equipped with the latest technology and refined interiors. Our conference hall offers adjustable lighting, high-speed connectivity, and customizable layouts to suit your needs — perfect for professional events or private gatherings.",
     image: dummy,
     reverse: true,
   },
@@ -41,7 +41,7 @@ const facilities = [
     category: "DINING",
     title: "Luxury Restaurant",
     description:
-      "Experience fine dining in our elegantly curated restaurant, offering world-class cuisine crafted by top chefs with a touch of local authenticity.",
+      "Experience fine dining in our elegantly curated restaurant, offering world-class cuisine crafted by top chefs. Indulge in international delicacies infused with local flavors, all served in an ambient space that celebrates culinary artistry and comfort. Enjoy a cozy dinner with loved ones or a premium breakfast buffet each morning.",
     image: dummy,
     reverse: false,
   },
@@ -50,7 +50,7 @@ const facilities = [
     category: "ACCOMMODATION",
     title: "Luxury Rooms & Suites",
     description:
-      "Relax and unwind in our beautifully designed rooms blending modern comfort with cultural heritage, providing a peaceful escape from the city.",
+      "Relax and unwind in our beautifully designed rooms blending modern comfort with cultural heritage. Each suite offers spacious interiors, elegant furnishings, and scenic views. Wake up to soft lighting, indulge in premium bedding, and experience a peaceful escape from the city’s hustle.",
     image: dummy,
     reverse: true,
   },
@@ -62,6 +62,12 @@ const fadeInUp = {
 };
 
 const HotelFacilities = () => {
+  const [expanded, setExpanded] = useState(null);
+
+  const toggleReadMore = (index) => {
+    setExpanded(expanded === index ? null : index);
+  };
+
   return (
     <>
       {/* === FACILITY ICONS SECTION === */}
@@ -102,7 +108,7 @@ const HotelFacilities = () => {
                 key={index}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="flex flex-col items-center bg-white/50 backdrop-blur-md border border-gray-100 rounded-2xl py-10 px-4 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="flex flex-col items-center bg-white/50 backdrop-blur-md border border-gray-100  py-10 px-4 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <img
                   src={item.icon}
@@ -126,25 +132,22 @@ const HotelFacilities = () => {
             key={index}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className={`grid md:grid-cols-2 gap-12 items-center relative ${
-              facility.reverse ? "md:flex-row-reverse" : ""
+            className={`grid md:grid-cols-2 gap-12 items-center ${
+              facility.reverse ? "md:[&>*:first-child]:order-2" : ""
             }`}
           >
-            {/* Floating background glow */}
-            <div
-              className={`absolute w-[400px] h-[400px] bg-gradient-to-br from-[#caa577]/30 to-transparent blur-3xl rounded-full -z-10 ${
-                facility.reverse ? "right-[-200px]" : "left-[-200px]"
-              } top-0 opacity-50`}
-            />
-
             {/* Text Section */}
             <motion.div
               initial={{ opacity: 0, x: facility.reverse ? 100 : -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative z-10"
+              className={`relative z-10 ${
+                facility.reverse
+                  ? "md:pl-10 md:border-l-4 border-[#caa577]"
+                  : "md:pr-10 md:border-r-4 border-[#caa577]"
+              }`}
             >
               <p className="text-[#caa577] font-bold text-sm tracking-widest mb-2 uppercase">
                 {facility.category}
@@ -162,17 +165,22 @@ const HotelFacilities = () => {
                 {facility.id}
               </motion.p>
 
-              <div className="mt-6 backdrop-blur-md bg-white/60 border-l-4 border-[#caa577]/60 pl-6 py-4 pr-4 rounded-xl shadow-md">
+              <div className="mt-6 backdrop-blur-md bg-white/60 border border-[#caa577]/40 pl-6 py-4 pr-4 rounded-xl shadow-md">
                 <p className="text-gray-600 text-sm leading-relaxed font-sans">
-                  {facility.description}
+                  {expanded === index
+                    ? facility.description
+                    : `${facility.description.slice(0, 150)}...`}
                 </p>
               </div>
 
+              {/* Read More button below */}
               <motion.button
-                whileHover={{ scale: 1.1, rotate: 3 }}
-                className="mt-6 border border-[#caa577] rounded-full p-3 hover:bg-[#caa577]/10 transition-all duration-300"
+                onClick={() => toggleReadMore(index)}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="mt-6 text-sm font-medium text-[#caa577] underline underline-offset-4 hover:text-[#b88d54] transition-all"
               >
-                <span className="text-[#caa577] text-lg">→</span>
+                {expanded === index ? "Read Less" : "Read More"}
               </motion.button>
             </motion.div>
 
@@ -181,8 +189,8 @@ const HotelFacilities = () => {
               initial={{ opacity: 0, x: facility.reverse ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className={`flex justify-center ${
-                facility.reverse ? "md:justify-start" : "md:justify-end"
+              className={`flex ${
+                facility.reverse ? "justify-start" : "justify-end"
               }`}
             >
               <motion.img
@@ -190,7 +198,7 @@ const HotelFacilities = () => {
                 transition={{ duration: 0.5 }}
                 src={facility.image}
                 alt={facility.title}
-                className="rounded-3xl shadow-2xl w-4/5 border border-white/40"
+                className=" shadow-2xl w-4/5 border border-white/40"
               />
             </motion.div>
           </motion.div>

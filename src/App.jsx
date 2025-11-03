@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import RoomDetails from "./pages/RoomDetails";
 import RoyalHomes from "./pages/RoyalHomes";
 import Service from "./pages/Service";
+import Events from "./pages/Event";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,7 @@ function App() {
           <Route path="/RoomDetails" element={<RoomDetails />} />
           <Route path="/RoyalHomes" element={<RoyalHomes />} />
           <Route path="/Services" element={<Service />} />
-
+          <Route path="/Events" element={<Events />} />
           {/* <Route path="/Contact" element={<Contact />} />
           <Route path="/Gallery" element={<GalleryP />} /> */}
 

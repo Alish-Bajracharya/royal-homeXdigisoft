@@ -75,7 +75,7 @@ const Footer = () => {
           {/* Our Facilities */}
           <div>
             <h4 className="text-lg font-semibold mb-5 text-[#bda87f] uppercase tracking-wide border-b border-[#bda87f]/30 pb-2">
-              Our Facilities
+              We Provide
             </h4>
             <ul className="space-y-3 text-gray-300">
               <li><a href="/rooms" className="hover:text-white">Deluxe Rooms</a></li>

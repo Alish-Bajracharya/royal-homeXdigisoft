@@ -2,10 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import Service from "../components/Home/Service";
-import WhyChooseUs from "../components/Home/WhyChooseUs";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
-import Testimonial from "../components/Home/Testimonial";
 import Navbar from "../components/Navbar";
 import hero from "../assets/hero.webp";
 import HotelFacilities from "../components/HotelFacilities";
@@ -89,7 +87,6 @@ const Services = () => {
       <Service />
       <HotelFacilities />
       <Contact />
-      <Testimonial />
       <Footer />
     </>
   );

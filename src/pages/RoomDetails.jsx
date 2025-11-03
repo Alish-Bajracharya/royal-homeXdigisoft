@@ -15,7 +15,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import gallery1 from "../assets/night1.webp";
+import gallery1 from "../assets/rooms/1.jpg";
 import gallery2 from "../assets/hero.webp";
 import icon12 from "../assets/rooms/icon-12.png";
 import icon13 from "../assets/rooms/icon-13.png";
