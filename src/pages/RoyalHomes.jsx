@@ -7,6 +7,7 @@ import Testimonial from "../components/Home/Testimonial";
 import Navbar from "../components/Navbar";
 import hero from "../assets/hero.webp";
 import FeaturesSection from "../components/About/FeaturesSection";
+import slogo from "../assets/slogo.png";
 
 const RoyalHomes = () => {
   return (
@@ -30,6 +31,9 @@ const RoyalHomes = () => {
           </p>
         </div>
       </section>
+      <div className="absolute z-10 text-left left-16 -mt-64">
+                    <img src={slogo} alt="abcd" />
+                  </div>
 
       {/* Page Sections */}
       <AboutUs />

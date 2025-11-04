@@ -6,9 +6,9 @@ import Img3 from "../../assets/rooms/5.jpg";
 import Img4 from "../../assets/rooms/1.jpg";
 
 const rooms = [
-  { id: 1, title: "Twin Bed Room", img: Img1, path: "/room" },
+  { id: 1, title: "Super Deluxe Room", img: Img3, path: "/room" },
   { id: 2, title: "Master Room", img: Img2, path: "/room" },
-  { id: 3, title: "Super Deluxe Room", img: Img3, path: "/room" },
+  { id: 3, title: "Twin Bed Room", img: Img1, path: "/room" },
   { id: 4, title: "Deluxe Room", img: Img4, path: "/room" },
 ];
 

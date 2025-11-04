@@ -21,7 +21,7 @@ const facilities = [
   {
     id: "01",
     category: "SWIMMING",
-    title: "Indoor Swimming Pool",
+    title: " Swimming Pool",
     description:
       "Immerse yourself in tranquility with our temperature-controlled indoor swimming pool designed for leisure and fitness, offering calm lighting and serene vibes. Enjoy refreshing laps or simply unwind by the poolside with soothing music and refreshments from our in-house bar. The pool area also includes a jacuzzi and a small kids’ section for family enjoyment.",
     image: dummy,

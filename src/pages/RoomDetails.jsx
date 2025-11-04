@@ -24,6 +24,7 @@ import icon15 from "../assets/rooms/icon-15.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import hero from "../assets/hero.webp";
+import slogo from "../assets/slogo.png"
 
 const room = {
   title: "Deluxe Room",
@@ -189,6 +190,7 @@ export default function RoomDetails() {
                 </div>
               </div>
             </div>
+            
    
             {/* soft curved bottom */}
             <svg
@@ -203,7 +205,11 @@ export default function RoomDetails() {
               />
             </svg>
           </div>
+          
         </motion.section>
+        <div className="absolute z-10 text-left left-16 -mt-72">
+              <img src={slogo} alt="abcd" />
+            </div>
 
         {/* Main content container (slightly pulled up to overlap hero curve) */}
         <main className="max-w-7xl mx-auto px-6 md:px-8 -mt-6 md:-mt-10  relative z-10">

@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
 import hero from "../assets/hero.webp";
 import HotelFacilities from "../components/HotelFacilities";
+import slogo from "../assets/slogo.png";
 
 const room = {
   title: "Our Services",
@@ -82,6 +83,9 @@ const Services = () => {
             </svg>
           </div>
         </motion.section>
+        <div className="absolute z-10 text-left left-16 -mt-72">
+                      <img src={slogo} alt="abcd" />
+                    </div>
 
       {/* Page Sections */}
       <Service />
