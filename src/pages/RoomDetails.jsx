@@ -15,8 +15,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import gallery1 from "../assets/rooms/1.jpg";
-import gallery2 from "../assets/hero.webp";
+import gallery1 from "../assets/rooms/7.jpg";
+import gallery2 from "../assets/rooms/6.jpg";
+import gallery3 from "../assets/rooms/3.jpg";
+import gallery4 from "../assets/rooms/4.jpg";
+import gallery5 from "../assets/rooms/5.jpg";
+import gallery6 from "../assets/rooms/2.jpg";
+import gallery7 from "../assets/rooms/1.jpg";
+
 import icon12 from "../assets/rooms/icon-12.png";
 import icon13 from "../assets/rooms/icon-13.png";
 import icon14 from "../assets/rooms/icon-14.png";
@@ -61,7 +67,7 @@ Enjoy the splendor of Amsterdam's vistas from this opulent accommodation. Each r
     "Refrigerator",
     "Airport Transport",
   ],
-  gallery: [gallery1, gallery2, gallery1, gallery2],
+  gallery: [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7],
 };
 
 export default function RoomDetails() {

@@ -8,6 +8,12 @@ import breakfast from "../assets/icons/lunch.png";
 import swimmingPool from "../assets/icons/swimming-pool.png";
 import dummy from "../assets/night.webp";
 
+import pool from "../assets/pool/5.jpg"
+import hall from "../assets/hall/3.jpg"
+import restaurant from "../assets/restaurant/2.jpg"
+import room from "../assets/rooms/5.jpg"
+
+
 const topFacilities = [
   { icon: airCondition, title: "Air Condition" },
   { icon: internet, title: "High-Speed Internet" },
@@ -24,7 +30,7 @@ const facilities = [
     title: " Swimming Pool",
     description:
       "Immerse yourself in tranquility with our temperature-controlled indoor swimming pool designed for leisure and fitness, offering calm lighting and serene vibes. Enjoy refreshing laps or simply unwind by the poolside with soothing music and refreshments from our in-house bar. The pool area also includes a jacuzzi and a small kids’ section for family enjoyment.",
-    image: dummy,
+    image: pool,
     reverse: false,
   },
   {
@@ -33,7 +39,7 @@ const facilities = [
     title: "Conference Hall",
     description:
       "Host your meetings, workshops, and conferences in a sophisticated venue equipped with the latest technology and refined interiors. Our conference hall offers adjustable lighting, high-speed connectivity, and customizable layouts to suit your needs — perfect for professional events or private gatherings.",
-    image: dummy,
+    image: hall,
     reverse: true,
   },
   {
@@ -42,7 +48,7 @@ const facilities = [
     title: "Luxury Restaurant",
     description:
       "Experience fine dining in our elegantly curated restaurant, offering world-class cuisine crafted by top chefs. Indulge in international delicacies infused with local flavors, all served in an ambient space that celebrates culinary artistry and comfort. Enjoy a cozy dinner with loved ones or a premium breakfast buffet each morning.",
-    image: dummy,
+    image: restaurant,
     reverse: false,
   },
   {
@@ -51,7 +57,7 @@ const facilities = [
     title: "Luxury Rooms & Suites",
     description:
       "Relax and unwind in our beautifully designed rooms blending modern comfort with cultural heritage. Each suite offers spacious interiors, elegant furnishings, and scenic views. Wake up to soft lighting, indulge in premium bedding, and experience a peaceful escape from the city’s hustle.",
-    image: dummy,
+    image: room,
     reverse: true,
   },
 ];
@@ -198,7 +204,7 @@ const HotelFacilities = () => {
                 transition={{ duration: 0.5 }}
                 src={facility.image}
                 alt={facility.title}
-                className=" shadow-2xl w-4/5 border border-white/40"
+                className=" shadow-2xl w-full border border-white/40"
               />
             </motion.div>
           </motion.div>

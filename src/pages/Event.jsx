@@ -10,9 +10,21 @@ import {
   PartyPopper,
 } from "lucide-react";
 import hero from "../assets/hero.webp"
+import hall from "../assets/hall/2.jpg"
+import ev from "../assets/ev/1.jpg"
+import ct from "../assets/happy.webp"
+import hall2 from "../assets/hall/4.jpg"
+import pool from "../assets/pool/5.jpg"
+import rt from "../assets/restaurant/2.jpg"
+import hall3 from "../assets/hall/3.jpg"
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+
 
 const ResortEvents = () => {
   return (
+    <>
+    <Navbar />
     <div className="overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100/40">
       {/* 🌟 Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center text-center">
@@ -48,17 +60,17 @@ const ResortEvents = () => {
           {/* Left: Image collage */}
           <div className="relative grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+              src={ct}
               alt="Event celebration"
               className=" shadow-lg object-cover h-72 w-full col-span-2"
             />
             <img
-              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+              src={ev}
               alt="Wedding event"
               className=" shadow-md object-cover h-60"
             />
             <img
-              src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0"
+              src={hall}
               alt="Dinner"
               className="shadow-md object-cover h-60"
             />
@@ -151,7 +163,7 @@ const ResortEvents = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-amber-100 hover:border-amber-300 hover:shadow-amber-200/50 transition-all duration-300"
+                className="bg-white  p-8 shadow-lg border border-amber-100 hover:border-amber-300 hover:shadow-amber-200/50 transition-all duration-300"
               >
                 <div className="mb-4 flex justify-center">{item.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -177,19 +189,19 @@ const ResortEvents = () => {
           </motion.h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              "https://images.unsplash.com/photo-1508766206392-8bd5cf550d1b",
-              "https://images.unsplash.com/photo-1519681393784-d120267933ba",
-              "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0",
-              "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
-              "https://images.unsplash.com/photo-1511795409834-ef04bbd61622",
-              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+              hall2,
+              ct,
+              hall,
+              pool,
+              hall3,
+              rt,
             ].map((src, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="overflow-hidden rounded-2xl group"
+                className="overflow-hidden  group"
               >
                 <img
                   src={src}
@@ -205,7 +217,7 @@ const ResortEvents = () => {
       {/* 💫 Redesigned Section 5: Booking CTA */}
       <section className="relative h-[60vh] flex items-center justify-center text-center">
         <img
-          src="https://images.unsplash.com/photo-1604335399105-3887bffb918b"
+          src={ct}
           alt="Event Night"
           className="absolute inset-0 w-full h-full object-cover brightness-[0.35]"
         />
@@ -228,6 +240,8 @@ const ResortEvents = () => {
         </motion.div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 };
 

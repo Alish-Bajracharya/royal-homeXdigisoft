@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import hero from "../assets/hero.webp";
 import HotelFacilities from "../components/HotelFacilities";
 import slogo from "../assets/slogo.png";
+import pool from "../assets/pool/5.jpg"
 
 const room = {
   title: "Our Services",
