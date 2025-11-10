@@ -1,13 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  MapPin,
-  Star,
-  Share2,
-  Check,
-  Phone,
-  Mail,
-  Map,
-} from "lucide-react";
+import { MapPin, Star, Share2, Check, Phone, Mail, Map } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
@@ -30,7 +22,7 @@ import icon15 from "../assets/rooms/icon-15.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import hero from "../assets/hero.webp";
-import slogo from "../assets/slogo.png"
+import slogo from "../assets/slogo.png";
 
 const room = {
   title: "Deluxe Room",
@@ -67,7 +59,15 @@ Enjoy the splendor of Amsterdam's vistas from this opulent accommodation. Each r
     "Refrigerator",
     "Airport Transport",
   ],
-  gallery: [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7],
+  gallery: [
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery6,
+    gallery7,
+  ],
 };
 
 export default function RoomDetails() {
@@ -111,7 +111,7 @@ export default function RoomDetails() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
-    const bookingRef = useRef(null);
+  const bookingRef = useRef(null);
   const galleryRef = useRef(null);
   const [isSticky, setIsSticky] = useState(true);
 
@@ -135,7 +135,6 @@ export default function RoomDetails() {
       if (galleryRef.current) observer.unobserve(galleryRef.current);
     };
   }, []);
-
 
   return (
     <>
@@ -164,7 +163,10 @@ export default function RoomDetails() {
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute inset-0" style={{ mixBlendMode: "overlay" }} />
+            <div
+              className="absolute inset-0"
+              style={{ mixBlendMode: "overlay" }}
+            />
 
             <div className="relative z-10 text-center px-6">
               <h1
@@ -196,8 +198,7 @@ export default function RoomDetails() {
                 </div>
               </div>
             </div>
-            
-   
+
             {/* soft curved bottom */}
             <svg
               className="absolute bottom-0 left-0 w-full"
@@ -211,21 +212,14 @@ export default function RoomDetails() {
               />
             </svg>
           </div>
-          
         </motion.section>
         <div className="absolute z-10 text-left left-16 -mt-72">
-              <img src={slogo} alt="abcd" />
-            </div>
+          <img src={slogo} alt="abcd" />
+        </div>
 
         {/* Main content container (slightly pulled up to overlap hero curve) */}
         <main className="max-w-7xl mx-auto px-6 md:px-8 -mt-6 md:-mt-10  relative z-10">
-          <section
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8 rounded-sm p-6 md:p-10"
-            style={{
-              background: "rgba(249, 247, 243, 0.9)",
-            }}
-          >
-
+          <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 rounded-sm p-6 md:p-10">
             {/* LEFT: content (no border, glassy look, layered) */}
             <motion.div
               initial="hidden"
@@ -245,8 +239,14 @@ export default function RoomDetails() {
                       boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
                     }}
                   >
-                    <img src={it.icon} alt={it.label} className="w-8 h-6 object-contain" />
-                    <span className="text-sm font-medium text-[#1B4332]">{it.label}</span>
+                    <img
+                      src={it.icon}
+                      alt={it.label}
+                      className="w-8 h-6 object-contain"
+                    />
+                    <span className="text-sm font-medium text-[#1B4332]">
+                      {it.label}
+                    </span>
                   </div>
                 ))}
                 <button
@@ -277,7 +277,9 @@ export default function RoomDetails() {
                   <h3 className="text-2xl font-serif font-semibold text-[#1B4332] mb-3">
                     Room Description
                   </h3>
-                  <p className="text-gray-700 leading-relaxed text-[15px]">{room.description}</p>
+                  <p className="text-gray-700 leading-relaxed text-[15px]">
+                    {room.description}
+                  </p>
 
                   {/* Small location highlight (soft moss background + gold dot) */}
                   <div
@@ -288,18 +290,25 @@ export default function RoomDetails() {
                     }}
                   >
                     <MapPin size={14} />
-                    <span className="font-medium">Prime location · {room.location}</span>
+                    <span className="font-medium">
+                      Prime location · {room.location}
+                    </span>
                   </div>
                 </div>
 
                 {/* Amenities grid (floating minimal cards) */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-[#1B4332] mb-4">Services & Amenities</h4>
+                  <h4 className="text-lg font-semibold text-[#1B4332] mb-4">
+                    Services & Amenities
+                  </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {room.amenities.map((a, i) => (
                       <motion.div
                         key={i}
-                        whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(11,45,30,0.06)" }}
+                        whileHover={{
+                          y: -6,
+                          boxShadow: "0 20px 40px rgba(11,45,30,0.06)",
+                        }}
                         className="flex items-center gap-3 rounded-sm p-3"
                         style={{
                           background: "rgba(255,255,255,0.92)",
@@ -323,14 +332,19 @@ export default function RoomDetails() {
 
                 {/* Rules (clean stacked blocks, no borders) */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-[#1B4332] mb-4">Room Rules</h4>
+                  <h4 className="text-lg font-semibold text-[#1B4332] mb-4">
+                    Room Rules
+                  </h4>
                   <div className="space-y-3">
                     {room.rules.map((r, i) => (
                       <div
                         key={i}
                         className="flex items-start gap-3 p-3 rounded-sm"
                         style={{
-                          background: i % 2 === 0 ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0.85)",
+                          background:
+                            i % 2 === 0
+                              ? "rgba(255,255,255,0.75)"
+                              : "rgba(255,255,255,0.85)",
                           boxShadow: "0 6px 16px rgba(16,24,32,0.02)",
                         }}
                       >
@@ -354,101 +368,140 @@ export default function RoomDetails() {
                 isSticky ? "sticky top-28" : "relative"
               } transition-all duration-300`}
             >
-  <div style={{ position: "relative", minHeight: "600px" }}>
-    {/* Booking Card (fixed on scroll) */}
-    <div
-      className="rounded-2xl p-5" style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.78))", backdropFilter: "blur(6px)", boxShadow: "0 12px 30px rgba(11,45,30,0.06)", }} >
-                <h3 className="text-xl font-serif font-semibold text-[#1B4332] text-center mb-4">
-                  Check Your Room
-                </h3>
+              <div style={{ position: "relative", minHeight: "600px" }}>
+                {/* Booking Card (fixed on scroll) */}
+                <div
+                  className="rounded-2xl p-5"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.78))",
+                    backdropFilter: "blur(6px)",
+                    boxShadow: "0 12px 30px rgba(11,45,30,0.06)",
+                  }}
+                >
+                  <h3 className="text-xl font-serif font-semibold text-[#1B4332] text-center mb-4">
+                    Check Your Room
+                  </h3>
 
-                <form onSubmit={validateAndSubmit} className="space-y-3">
-                  {["checkIn", "checkOut"].map((field) => (
-                    <div key={field}>
-                      <label className="block text-xs text-gray-600 mb-1 font-medium">
-                        {field === "checkIn" ? "Check-In Date" : "Check-Out Date"}
-                      </label>
-                      <input
-                        type="date"
-                        name={field}
-                        value={form[field]}
-                        onChange={handleChange}
-                        className="w-full rounded-lg px-3 py-2 text-sm focus:outline-none"
-                        style={{
-                          border: "1px solid rgba(16,24,32,0.06)",
-                          background: "rgba(255,255,255,0.9)",
-                          boxShadow: "inset 0 1px 2px rgba(16,24,32,0.02)",
-                        }}
-                      />
-                    </div>
-                  ))}
-
-                  {[
-                    { name: "rooms", label: "Rooms", options: ["1", "2", "3"] },
-                    { name: "adults", label: "Adults", options: ["1", "2", "3", "4"] },
-                    { name: "children", label: "Children", options: ["0", "1", "2", "3"] },
-                  ].map((item) => (
-                    <div key={item.name}>
-                      <label className="block text-xs text-gray-600 mb-1 font-medium">{item.label}</label>
-                      <select
-                        name={item.name}
-                        value={form[item.name]}
-                        onChange={handleChange}
-                        className="w-full rounded-lg px-3 py-2 text-sm focus:outline-none"
-                        style={{
-                          border: "1px solid rgba(16,24,32,0.06)",
-                          background: "rgba(255,255,255,0.9)",
-                        }}
-                      >
-                        {item.options.map((o) => (
-                          <option key={o} value={o}>
-                            {o} {item.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  ))}
-
-                  <div className="pt-3">
-                    <h4 className="text-sm font-semibold text-[#1B4332] mb-2 flex items-center gap-2">
-                      <Check size={16} /> Extra Services
-                    </h4>
-
-                    {[
-                      { key: "clean", label: "Room Clean", price: "Rs. 1500 /Night" },
-                      { key: "parking", label: "Parking", price: "Free" },
-                      { key: "breakfast", label: "Breakfast", price: "Rs. 250 /Total" },
-                      { key: "dinner", label: "Dinner", price: "Rs. 500 /Day" },
-                    ].map((item) => (
-                      <div key={item.key} className="flex items-center justify-between py-2 text-sm text-gray-700">
-                        <label className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            name={`extra_${item.key}`}
-                            checked={!!form.extras[item.key]}
-                            onChange={handleChange}
-                            className="accent-[#1B4332]"
-                          />
-                          <span>{item.label}</span>
+                  <form onSubmit={validateAndSubmit} className="space-y-3">
+                    {["checkIn", "checkOut"].map((field) => (
+                      <div key={field}>
+                        <label className="block text-xs text-gray-600 mb-1 font-medium">
+                          {field === "checkIn"
+                            ? "Check-In Date"
+                            : "Check-Out Date"}
                         </label>
-                        <span className="text-[#1B4332] font-medium">{item.price}</span>
+                        <input
+                          type="date"
+                          name={field}
+                          value={form[field]}
+                          onChange={handleChange}
+                          className="w-full rounded-lg px-3 py-2 text-sm focus:outline-none"
+                          style={{
+                            border: "1px solid rgba(16,24,32,0.06)",
+                            background: "rgba(255,255,255,0.9)",
+                            boxShadow: "inset 0 1px 2px rgba(16,24,32,0.02)",
+                          }}
+                        />
                       </div>
                     ))}
-                  </div>
 
-                  <button
-                    type="submit"
-                    className="w-full rounded-full py-3 mt-2 font-medium tracking-wide text-white"
-                    style={{
-                      background:
-                        "#e5c413",
-                      boxShadow: "0 10px 30px rgba(163,177,138,0.12)",
-                    }}
-                  >
-                    Check Availability →
-                  </button>
-                </form>
-              </div>
+                    {[
+                      {
+                        name: "rooms",
+                        label: "Rooms",
+                        options: ["1", "2", "3"],
+                      },
+                      {
+                        name: "adults",
+                        label: "Adults",
+                        options: ["1", "2", "3", "4"],
+                      },
+                      {
+                        name: "children",
+                        label: "Children",
+                        options: ["0", "1", "2", "3"],
+                      },
+                    ].map((item) => (
+                      <div key={item.name}>
+                        <label className="block text-xs text-gray-600 mb-1 font-medium">
+                          {item.label}
+                        </label>
+                        <select
+                          name={item.name}
+                          value={form[item.name]}
+                          onChange={handleChange}
+                          className="w-full rounded-lg px-3 py-2 text-sm focus:outline-none"
+                          style={{
+                            border: "1px solid rgba(16,24,32,0.06)",
+                            background: "rgba(255,255,255,0.9)",
+                          }}
+                        >
+                          {item.options.map((o) => (
+                            <option key={o} value={o}>
+                              {o} {item.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    ))}
+
+                    <div className="pt-3">
+                      <h4 className="text-sm font-semibold text-[#1B4332] mb-2 flex items-center gap-2">
+                        <Check size={16} /> Extra Services
+                      </h4>
+
+                      {[
+                        {
+                          key: "clean",
+                          label: "Room Clean",
+                          price: "Rs. 1500 /Night",
+                        },
+                        { key: "parking", label: "Parking", price: "Free" },
+                        {
+                          key: "breakfast",
+                          label: "Breakfast",
+                          price: "Rs. 250 /Total",
+                        },
+                        {
+                          key: "dinner",
+                          label: "Dinner",
+                          price: "Rs. 500 /Day",
+                        },
+                      ].map((item) => (
+                        <div
+                          key={item.key}
+                          className="flex items-center justify-between py-2 text-sm text-gray-700"
+                        >
+                          <label className="flex items-center gap-2 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              name={`extra_${item.key}`}
+                              checked={!!form.extras[item.key]}
+                              onChange={handleChange}
+                              className="accent-[#1B4332]"
+                            />
+                            <span>{item.label}</span>
+                          </label>
+                          <span className="text-[#1B4332] font-medium">
+                            {item.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full rounded-full py-3 mt-2 font-medium tracking-wide text-white"
+                      style={{
+                        background: "#e5c413",
+                        boxShadow: "0 10px 30px rgba(163,177,138,0.12)",
+                      }}
+                    >
+                      Check Availability →
+                    </button>
+                  </form>
+                </div>
               </div>
 
               {/* Contact Card */}
@@ -471,11 +524,15 @@ export default function RoomDetails() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail size={18} className="text-[#1B4332]" />
-                    <span className="font-medium">info@royalshomeresort.com.np</span>
+                    <span className="font-medium">
+                      info@royalshomeresort.com.np
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Map size={18} className="text-[#1B4332]" />
-                    <span className="font-medium">ROYALS HOME, Anboo Khaireni, Tanahun</span>
+                    <span className="font-medium">
+                      ROYALS HOME, Anboo Khaireni, Tanahun
+                    </span>
                   </div>
                 </div>
 
@@ -488,51 +545,51 @@ export default function RoomDetails() {
         </main>
 
         {/* Full-width Room Gallery */}
-<section className="w-full bg-[#F9F7F3] px-6 md:px-8 py-9 pb-20">
-  <div className="max-w-7xl mx-auto mb-10 text-center">
-    <h4 className="text-3xl md:text-4xl font-serif font-semibold text-[#1B4332] mb-3 tracking-tight">
-      Room Gallery
-    </h4>
-    <p className="text-base text-gray-600 max-w-2xl mx-auto">
-      A glimpse inside the <span className="font-semibold text-[#1B4332]">{room.title}</span>,
-      warm tones, natural textures, and peaceful ambience to elevate your stay.
-    </p>
-  </div>
-
-  {/* Masonry Grid */}
-  <div
-    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 auto-rows-[150px]"
-  >
-    {room.gallery.concat(room.gallery).map((g, idx) => {
-      // Assign different spans for variety (vertical / horizontal)
-      const rowSpan = idx % 5 === 0 ? 2 : idx % 3 === 0 ? 1 : 2;
-      const colSpan = idx % 4 === 0 ? 2 : 1;
-
-      return (
-        <motion.div
-          key={idx}
-          whileHover={{ scale: 1.03, zIndex: 50 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className={`overflow-hidden relative`}
-          style={{
-            gridRowEnd: `span ${rowSpan}`,
-            gridColumnEnd: `span ${colSpan}`,
-          }}
-        >
-          <img
-            src={g}
-            alt={`gallery-${idx}`}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          />
-          {/* Optional text overlay */}
-          <div className="absolute bottom-2 left-2 text-white text-xs font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
-            {room.title} View {idx + 1}
+        <section className="w-full bg-[#F9F7F3] px-6 md:px-8 py-9 pb-20">
+          <div className="max-w-7xl mx-auto mb-10 text-center">
+            <h4 className="text-3xl md:text-4xl font-serif font-semibold text-[#1B4332] mb-3 tracking-tight">
+              Room Gallery
+            </h4>
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
+              A glimpse inside the{" "}
+              <span className="font-semibold text-[#1B4332]">{room.title}</span>
+              , warm tones, natural textures, and peaceful ambience to elevate
+              your stay.
+            </p>
           </div>
-        </motion.div>
-      );
-    })}
-  </div>
-</section>
+
+          {/* Masonry Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 auto-rows-[150px]">
+            {room.gallery.concat(room.gallery).map((g, idx) => {
+              // Assign different spans for variety (vertical / horizontal)
+              const rowSpan = idx % 5 === 0 ? 2 : idx % 3 === 0 ? 1 : 2;
+              const colSpan = idx % 4 === 0 ? 2 : 1;
+
+              return (
+                <motion.div
+                  key={idx}
+                  whileHover={{ scale: 1.03, zIndex: 50 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className={`overflow-hidden relative`}
+                  style={{
+                    gridRowEnd: `span ${rowSpan}`,
+                    gridColumnEnd: `span ${colSpan}`,
+                  }}
+                >
+                  <img
+                    src={g}
+                    alt={`gallery-${idx}`}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  {/* Optional text overlay */}
+                  <div className="absolute bottom-2 left-2 text-white text-xs font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    {room.title} View {idx + 1}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
 
         <Footer />
       </div>
